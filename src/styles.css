@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #F1F1F1 !important;
+}
+
+[class*='si-wrapper'] {
+    width: 350px !important;
+}

@@ -1,0 +1,137 @@
+<div class="row app-map-wrapper animated fadeInUp">
+    <div class="col">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+            <agm-marker *ngFor="let m of markers" [latitude]="m.lat" [longitude]="m.lng" [openInfoWindow]="openInfoWindow" [label]="m.label">
+                <agm-snazzy-info-window [maxWidth]="600" [closeWhenOthersOpen]="true" style="width:400px">
+                    <ng-template>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td style="border-top: none;">
+                                        <i class="fa fa-map-marker fa-2x"></i>
+                                    </td>
+                                    <td style="border-top: none;">
+                                        <p *ngFor="let inf of m.info" style="margin-bottom: 0px">{{inf}}</p>
+                                        <!-- <p style="margin-bottom: 0px;">#63, 1st Floor, 16th Main Road,</p>
+                                        <p style="margin-bottom: 0px;">8th Cross Road, Gangotri circle,</p>
+                                        <p style="margin-bottom: 0px;">BTM Layout 1 ( Near Udupi Garden ),</p>
+                                        <p style="margin-bottom: 0px;">Bengaluru, Karnataka 560076</p> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-template>
+                </agm-snazzy-info-window>
+            </agm-marker>
+        </agm-map>
+    </div>
+</div>
+<!-- <section class="section-wrapper contact-info-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-sm-6">
+                <div class="contact-carding">
+                    <i class="fa fa-envelope fa-3x watermark"></i>
+                    <p class="carding-header">Have a question?</p>
+                    <p class="carding-body">info@vraio.in</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6">
+                <div class="contact-carding">
+                    <i class="fa fa-phone-square fa-3x watermark"></i>
+                    <p class="carding-header">Call us</p>
+                    <p class="carding-body">+91 97387 35077</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="section-wrapper contact-form-wrapper animated fadeInUp">
+    <div class="blurrer"></div>
+    <div class="container">
+        <br/>
+        <div class="row">
+            <div class="col-12 col-md-6 col-sm-6">
+                <div class="contact-carding">
+                    <i class="fa fa-envelope fa-3x watermark"></i>
+                    <p class="carding-header">Have a question?</p>
+                    <p class="carding-body">info@vraio.in</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-sm-6">
+                <div class="contact-carding">
+                    <i class="fa fa-phone-square fa-3x watermark"></i>
+                    <p class="carding-header">Call us</p>
+                    <p class="carding-body">+91 97387 35077</p>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <h5 style="padding: 10px 0px;"><strong>VRAIO Software Solutions PVT LTD</strong></h5>
+                <address>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2"></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10"><strong>Bengaluru</strong></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 text-center"><i class="fa fa-map-marker"></i></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10"><span>#63, 1st Floor, 16th Main Road, 8th Cross Road, Gangotri circle, BTM Layout 1 ( Near Udupi Garden ), Bengaluru, Karnataka 560076</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 text-center"><i class="fa fa-map-marker"></i></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10"><span>#FF2, Parvatha Krishna, Ramachandrappa Layout, Subramanyapura Main Road, Raghavendra Layout, Gubbalala, Subramanyapura, Bengaluru, Karnataka 560061</span></div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 text-center"><i class="fa fa-clock-o"></i></div>
+                        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">Mon - Sat 9:00AM - 7:00PM</div>
+                    </div>
+                </address>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <form #form="ngForm" (ngSubmit)="submit(form)">
+                    <div class="row" ngModelGroup="contact">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <input type="text" required ngModel name="name" id="name" class="form-control" placeholder="Name" #name="ngModel" (change)="log(name)">
+                                <p class="text-danger" *ngIf="name.touched && !name.valid">
+                                    <span *ngIf="name.errors.required">Name is required.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <input type="email" ngModel name="email" id="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <input type="number" ngModel name="phone" id="phone" class="form-control" placeholder="Phone" #phone="ngModel" maxlength="10" required (change)="log(phone)">
+                                <p class=" text-danger " *ngIf="phone.touched && !phone.valid ">
+                                    <span *ngIf="phone.errors.required">Phone number is required.</span>
+                                    <span *ngIf="phone.errors.minlength">Phone number must be of 10 digit.</span>
+                                    <span *ngIf="phone.errors.maxlength">Phone number must be of 10 digit.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" ngModelGroup="contact">
+                        <div class="col">
+                            <div class="form-group">
+                                <textarea ngModel name="comment" id="comment" class="form-control" placeholder="Comment" rows="5" cols="20"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br/>
+    </div>
+</section>

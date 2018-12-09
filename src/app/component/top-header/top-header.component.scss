@@ -1,0 +1,72 @@
+@import './../../../assets/scss/base';
+$transitionTime: .5s;
+$boxShadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+0 3px 14px 2px rgba(0, 0, 0, 0.12),
+0 5px 5px -3px rgba(0, 0, 0, 0.3);
+$topBackGroundColor: black;
+$topMenuTextNormal: #DADADA;
+$topMenuTextHover: $topBackGroundColor;
+$linkColor: #ffcb05;
+@mixin box-shadow() {
+    box-shadow: $boxShadow;
+    -webkit-box-shadow: $boxShadow;
+    -moz-box-shadow: $boxShadow;
+}
+
+.top-header-wrapper {
+    background-color: $topBackGroundColor;
+    & a {
+        color: $linkColor !important;
+    }
+    & .nav {
+        &.nav-pills {
+            &.vraio-info-list {
+                &>.nav-item {
+                    &>a {
+                        &>i {
+                            &.fa {
+                                &::after {
+                                    content: '';
+                                    padding-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.pull-right {
+                &>.nav-item {
+                    padding: 2px 15px;
+                    transition: $transitionTime;
+                    &>a {
+                        @include fontStyle('sm');
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color: $topMenuTextNormal;
+                        transition: $transitionTime;
+                        &:hover {
+                            text-decoration: none;
+                            color: $topMenuTextHover;
+                            transition: $transitionTime;
+                        }
+                    }
+                    &:hover {
+                        background-color: #fff;
+                        transition: $transitionTime;
+                    }
+                }
+            }
+            &>.nav-item {
+                padding: 2px 15px;
+                transition: $transitionTime;
+                &>a {
+                    @include fontStyle('sm');
+                    text-transform: lowercase;
+                    text-decoration: none;
+                    color: $topMenuTextNormal;
+                    transition: $transitionTime;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div class="container-fluid top-header-wrapper">
+    <div class="row">
+        <div class="col">
+            <ul class="nav nav-pills pull-left vraio-info-list">
+                <li class="nav-item">
+                    <a href="mailto:info@vraio.in"><i class="fa fa-envelope"></i>info@vraio.in</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tel:+919738735077"><i class="fa fa-phone-square"></i>+91 97387 35077</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills pull-right">
+                <li class="nav-item" *ngFor="let item of items">
+                    <div *ngIf="item.newtab; then otherTab else sameTab"></div>
+                    <ng-template #sameTab>
+                        <a routerLink="{{item.link}}">{{item.name}}</a>
+                    </ng-template>
+                    <ng-template #otherTab>
+                        <a routerLink="{{item.link}}" target="_blank">{{item.name}}</a>
+                    </ng-template>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark vraio-main-menu" [class.fixed-top]="isFixed">
+    <a href="/" class="navbar-brand"><img src="{{logoUrl}}" alt="VRAIO" width="40" height="40" />&nbsp;VRAIO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar7">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar7">
+        <ul class="navbar-nav ml-auto">
+            <ng-template ngFor let-menu [ngForOf]="menuList" let-i="index">
+                <div *ngIf="menu.type == 'link'; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <li class="nav-item" [ngClass]="menu.active ? 'active' : ''">
+                        <a class="nav-link" routerLink="{{menu.route}}">{{menu.name}} <span class="sr-only" *ngIf="menu.active">(current)</span></a>
+                    </li>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{menu.route}}" [attr.id]="menu.name" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{menu.name}}
+                        </a>
+                        <div class="dropdown-menu" [attr.aria-labelledby]="menu.name">
+                            <a *ngFor="let sub of menu.options" class="dropdown-item text-capitalize" routerLink="{{menu.route + '/' + sub.route}}">
+                                {{sub.name}}
+                            </a>
+                        </div>
+                    </li>
+                </ng-template>
+            </ng-template>
+            <!-- <li *ngFor="let menu of menuList" class="nav-item" [ngClass]="menu.active ? 'active' : ''">
+                <a class="nav-link" href="{{menu.route}}">{{menu.name}} <span class="sr-only" *ngIf="menu.active">(current)</span></a>
+            </li> -->
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li> -->
+            <!-- <li class="nav-item" ngbDropdown>
+                <a class="nav-link" href="#" id="dropdownConfig1" ngbDropdownToggle>dropdown</a>
+                <div ngbDropdownMenu aria-labelledby="dropdownConfig1">
+                    <button class="dropdown-item">Action - 1</button>
+                    <button class="dropdown-item">Another Action</button>
+                    <button class="dropdown-item">Something else is here</button>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</nav>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light vraio-main-menu">
+    <a class="navbar-brand" href="#">VRAIO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <ng-template ngFor let-menu [ngForOf]="menuList" let-i="index" [ngForTrackBy]="trackByFn">
+                <div *ngIf="menu.type == 'link'; then thenBlock else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <li class="nav-item" [ngClass]="menu.active ? 'active' : ''">
+                        <a class="nav-link" href="{{menu.route}}">{{menu.name}} <span class="sr-only" *ngIf="menu.active">(current)</span></a>
+                    </li>
+                </ng-template>
+                <ng-template #elseBlock>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" [attr.id]="menu.name" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{menu.name}}
+                        </a>
+                        <div class="dropdown-menu" [attr.aria-labelledby]="menu.name">
+                            <a *ngFor="let sub of menu.options" class="dropdown-item" href="{{menu.route + '/' + sub.route}}">
+                                {{sub.name}}
+                            </a>
+                        </div>
+                    </li>
+                </ng-template>
+            </ng-template>
+        </ul>
+    </div>
+</nav> -->
+<!-- <div ngbDropdown>
+    <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Toggle</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+        <button class="dropdown-item">Action - 1</button>
+        <button class="dropdown-item">Another Action</button>
+        <button class="dropdown-item">Something else is here</button>
+    </div>
+</div> -->

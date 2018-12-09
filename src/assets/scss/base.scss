@@ -1,0 +1,104 @@
+$smallSize: 12px;
+$textColor: #B0B6B8;
+$textSize: 14px;
+$headerColor: #FFFFFF;
+$headerSize: 18px;
+$xSmall: 10px;
+$hyperLinkColor: #009688;
+$hyperLinkHoverColor: #00796B;
+$linkColor: #ffcb05;
+$appDark: #343a40;
+$borderColor: rgba(0, 0, 0, .125);
+a {
+    text-decoration: none;
+    color: $hyperLinkColor !important;
+    &:hover {
+        color: $hyperLinkHoverColor !important;
+    }
+}
+
+@mixin fontStyle($fontType) {
+    @if $fontType=='lg' {
+        color: $headerColor;
+        font-size: $headerSize;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    @else if $fontType=='sm' {
+        color: $textColor;
+        font-size: $smallSize;
+    }
+    @else if $fontType=='xs' {
+        color: $textColor;
+        font-size: $xSmall;
+    }
+    @else {
+        color: $textColor;
+        font-size: $textSize;
+    }
+}
+
+body {
+    background-color: #EEE;
+}
+
+.section-wrapper {
+    padding: 10px 0px;
+    &:nth-child(odd) {
+        background-color: #ebe9e9;
+    }
+    &:nth-child(even) {
+        background-color: #EEEEEE;
+    }
+    & .header {
+        margin: 20px 0px;
+    }
+}
+
+.jumbotron {
+    &.jumbotron-fluid {
+        margin-bottom: 0px;
+        background-size: cover;
+        position: relative;
+        & .container {
+            background-image: url('/assets/images/pattern.png');
+            background-repeat: repeat;
+        }
+    }
+}
+
+.card {
+    background-color: transparent;
+    margin-bottom: 10px;
+    border: none;
+    & .card-img-top {
+        height: auto;
+    }
+    & .card-header {
+        text-decoration: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 100%;
+        background-color: $appDark;
+        border-bottom: none;
+        color: $linkColor !important;
+        overflow: hidden;
+        & a {
+            color: $linkColor !important;
+            text-decoration: none;
+        }
+        border-bottom-left-radius: .25rem;
+        border-bottom-right-radius: .25rem;
+    }
+    & .card-body {
+        &>.card-title {
+            @include fontStyle('lg');
+            color: #212529;
+        }
+        &>.card-text {
+            @include fontStyle('');
+            color: #212529;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@import './../../../../assets/scss/base';
+.jumbotron {
+    &.jumbotron-fluid {
+        background-image: url('/assets/images/services/CustomWeb.jpg');
+        background-position: 10% 0%;
+    }
+}

@@ -1,0 +1,105 @@
+<section class="app-footer-wrapper">
+    <div class="container connect-us-wrapper">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <h4 class="text-capitalize title">To keep in touch</h4>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="row">
+                    <div class="col" *ngFor="let connection of ourConnections">
+                        <a class="text-capitalize" href="{{connection.link}}" target="_blank">
+                            <span class="fa-stack fa-lg">
+                            <i class="fa fa-square-o fa-stack-2x"></i>
+                            <i class="{{connection.icon}} fa-stack-1x"></i>
+                          </span> {{connection.network}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer-wrapper">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <h4 class="text-uppercase title">News Letter</h4>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Email Id" aria-label="Email Id for news letter" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <h4 class="text-uppercase title">More</h4>
+                <a *ngFor="let more of mores" routerLink="{{more.link}}" class="badge badge-dark footer-badges">{{more.name}}</a>
+                <!-- <span class="badge badge-light footer-badges" ></span> -->
+                <!-- <ul class="footer-list-group">
+                    <li class="footer-list-group-item" *ngFor="let more of mores">
+                        <span class="text-capitalize">{{more.name}}</span>
+                    </li>
+                </ul> -->
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <h4 class="text-uppercase title">
+                    Contact us
+                </h4>
+                <table class="table table-condensed contact-address-at-footer">
+                    <tr>
+                        <td>
+                            <i class="fa fa-map-marker"></i>
+                        </td>
+                        <td>
+                            <span>#63, 1st Floor, 16th Main Road, 8th Cross Road, Gangotri circle, BTM Layout 1 ( Near Udupi Garden ), Bengaluru, Karnataka 560076</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-map-marker"></i>
+                        </td>
+                        <td>
+                            <span>#FF2, Parvatha Krishna, Ramachandrappa Layout, Subramanyapura Main Road, Raghavendra Layout, Gubbalala, Subramanyapura, Bengaluru, Karnataka 560061</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-mobile-phone"></i>
+                        </td>
+                        <td>
+                            <span>+91 97387 35077</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fa fa-envelope"></i>
+                        </td>
+                        <td>
+                            <a routerLink="mailto:#">info@vraio.in</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-center text-capitalize copyright">copyright &copy; 2016 vraio software solutions, All rights reserved</p>
+                <!-- <ul class="nav nav-pills center-block">
+                    <li class="nav-item">
+                        Terms of Use
+                    </li>
+                    <li class="nav-item">
+                        Privacy Policy
+                    </li>
+                    <li class="nav-item">
+                        Email Disclaimer
+                    </li>
+                    <li class="nav-item">
+                        Information
+                    </li>
+                    <li class="nav-item">
+                        Security Policy
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+</section>

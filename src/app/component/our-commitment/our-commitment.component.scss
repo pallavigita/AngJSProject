@@ -1,0 +1,19 @@
+@import './../../../assets/scss/base';
+$descColor: #111;
+$nameColor: #111;
+.commitments-wrapper {
+    & .icon-wrap {
+        color: $nameColor !important;
+    }
+    & .text-wrap {
+        &>p {
+            &:first-child {
+                @include fontStyle('lg');
+            }
+            &:last-child {
+                @include fontStyle('');
+            }
+            color: $nameColor !important;
+        }
+    }
+}

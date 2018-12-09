@@ -1,0 +1,194 @@
+<app-carousel [setting]="carouselSetting"></app-carousel>
+<section class="section-wrapper services-wrapper">
+    <div class="container">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">services</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let service of services; trackBy: serviceName; index as i;">
+                <div class="card short-service-card">
+                    <img class="card-img-top" src="/assets/images/services/{{service.icon}}" alt="Card image cap" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1605e16a793%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1605e16a793%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22109.140625%22%20y%3D%2297.2%22%3EImage%20cap%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'">
+                    <div class="card-header text-uppercase">
+                        {{service.name}}
+                    </div>
+                    <div class="card-body">
+                        <!-- <h4 class="card-title text-uppercase"></h4> -->
+                        <p class="card-text">{{service.description}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let sub of service.sublinks">
+                            <a routerLink="{{sub.link}}" class="text-capitalize">{{sub.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-wrapper box-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 box-left">
+                <p>WEB-APPLICATION DEVELOPMENT</p>
+                <p>RESPONSIVE WEB PORTALS</p>
+                <p>E-COMMERCE WEBSITES</p>
+                <p>JAVA ARCHITECTURE & DESIGN EVALUATION</p>
+            </div>
+            <div class="col-lg-4 col-md-4 .d-none .d-md-block .d-xl-none">
+                <img src="http://vraio.in/img/center.png" alt="" class="img-fluid mx-auto d-block">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 box-right">
+                <p>BULK MAILING SYSTEMS</p>
+                <p>APPLICATION MAINTENANCE AND SUPPORT</p>
+                <p>INTEGRATION OF PAYMENT GATEWAYS</p>
+                <p>OPTIMIZED SEARCH ENGINE DEVELOPMENT</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">achivements</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center" *ngFor="let achive of achivements">
+                <h3 class="text-uppercase font-holder">
+                    <i class="{{achive.font}}"></i>
+                    <span>{{achive.number}}</span>
+                    <span *ngIf="achive.unit">{{achive.unit}}</span>
+                </h3>
+                <p>{{achive.description}}</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="section-wrapper d-none d-sm-block">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">OUR PROCESS</h2>
+            </div>
+        </div>
+        <our-progress></our-progress>
+    </div>
+</section>
+<section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Recent Works</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-2 col-sm-4 col-xs-6" *ngFor="let work of recentWorks; trackBy: serviceName; index as i;">
+                <div class="card recent-work-card" style="margin-bottom: 15px;">
+                    <div class="card-img-wrapper">
+                        <img class="card-img-top" src="/assets/images/recent/{{work.icon}}" alt="Card image cap">
+                    </div>
+                    <div class="card-header text-uppercase">
+                        <a href="{{work.link}}" target="_blank">{{work.name}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Testimonials</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div #testimonialsC class="owl-carousel owl-theme">
+                <div class="item" *ngFor="let test of testimonials; trackBy: serviceName; index as i;">
+                    <testimonial [inData]="test"></testimonial>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Our Clients</h2>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6" *ngFor="let client of clients; index as i;">
+                <a href="{{client.link}}" target="_blank">
+                    <div class="card short-client-card" style="margin-bottom: 15px;">
+                        <img class="card-img-top" src="/assets/images/clients/{{client.icon}}" alt="Card image cap" [style.backgroundColor]="client.backgroundColor" [style.padding]=client.padding>
+                    </div>
+                </a>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div #clientsC class="owl-carousel owl-theme">
+                    <div class="item" *ngFor="let client of clients; index as i;">
+                        <a href="{{client.link}}" target="_blank">
+                            <div class="card short-slide-client-card" style="margin-bottom: 15px;" [style.marginTop]="client.marginTop">
+                                <img class="card-img-top" src="/assets/images/clients/{{client.icon}}" alt="Card image cap" [style.backgroundColor]="client.backgroundColor" [style.padding]=client.padding>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Our Partners</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div #partnersC class="owl-carousel owl-theme">
+                    <div class="item" *ngFor="let client of clients; index as i;">
+                        <a href="{{client.link}}" target="_blank">
+                            <div class="card short-slide-client-card" style="margin-bottom: 15px;">
+                                <img class="card-img-top" src="/assets/images/clients/{{client.icon}}" alt="Card image cap" [style.backgroundColor]="client.backgroundColor" [style.padding]=client.padding>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- <section class="section-wrapper">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">OUR Commitments</h2>
+            </div>
+        </div>
+        <our-commitment></our-commitment>
+    </div>
+</section> -->
+
+
+<!-- <ngx-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+    <ngx-item NgxCarouselItem>
+        <img src="http://forum.ucweb.com/data/attachment/forum/201404/30/084044yyecatbzdciopcy0.jpg" alt="">
+    </ngx-item>
+    <ngx-item NgxCarouselItem>
+        <img src="https://wallpaperscraft.com/image/glare_background_blur_dark_63553_1280x720.jpg" alt="">
+    </ngx-item>
+    <ngx-item NgxCarouselItem>
+        <img src="https://wallpaperscraft.com/image/pink_floyd_triangle_space_planet_colors_3723_1280x720.jpg" alt="">
+    </ngx-item>
+    <button NgxCarouselPrev class='leftRs'>&lt;</button>
+    <button NgxCarouselNext class='rightRs'>&gt;</button>
+</ngx-carousel> -->

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 commitments-wrapper" *ngFor="let commit of commitments; index as i;">
+        <div class="row">
+            <div class="col-2 icon-wrap">
+                <i class="{{commit.icon}} fa-2x"></i>
+            </div>
+            <div class="col-10 text-wrap">
+                <p class="text-capitalize"><strong>{{commit.name}}</strong></p>
+                <p>{{commit.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<section class="section-wrapper animated fadeInUp">
+    <div class="container">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Portfolio</h2>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col">
+                <ul class="nav nav-pills justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">All Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Builders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">IT</a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+        <br/>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let port of portfolios">
+                <a href="{{port.link}}" target="_blank">
+                    <div class="card short-portfolio-card">
+                        <img class="card-img-top" src="/assets/images/recent/{{port.icon}}" alt="Card image cap" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1605e16a793%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1605e16a793%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22109.140625%22%20y%3D%2297.2%22%3EImage%20cap%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E'">
+                        <div class="card-header text-uppercase">
+                            {{port.name}}
+                        </div>
+                        <div class="descriptor animated fadeIn">
+                            <p>{{port.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-wrapper animated fadeInUp">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Our Clients</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div #clientsC class="owl-carousel owl-theme">
+                    <div class="item" *ngFor="let client of clients; index as i;">
+                        <a href="{{client.link}}" target="_blank">
+                            <div class="card short-slide-client-card" style="margin-bottom: 15px;" [style.marginTop]="client.marginTop">
+                                <img class="card-img-top" src="/assets/images/clients/{{client.icon}}" alt="Card image cap" [style.backgroundColor]="client.backgroundColor" [style.padding]=client.padding>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="section-wrapper animated fadeInUp">
+    <div class="container-fluid">
+        <div class="row header">
+            <div class="col">
+                <h2 class="text-uppercase text-center">Our Clients</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6" *ngFor="let client of clients; index as i;">
+                <a href="{{client.link}}" target="_blank">
+                    <div class="card short-client-card" style="margin-bottom: 15px;">
+                        <img class="card-img-top" src="/assets/images/clients/{{client.icon}}" alt="Card image cap" [style.backgroundColor]="client.backgroundColor" [style.padding]=client.padding>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section> -->
